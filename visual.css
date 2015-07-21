@@ -1,0 +1,10 @@
+<style>
+	body { float: left }
+	div { height:4px; } 
+	b { height: 1px; display: block; background: #999; margin: 3px 0; }
+	i { float:left; display:block; width:4px; height:4px; background: #FAFAFA; }
+	i.S, i.N, i.B { box-shadow: 0 0 6px rgba(255,0,0,0.5); position: relative }
+	i.N { background: #000; z-index: 10; box-shadow: 0 0 8px rgba(0,0,0,0.8); }
+	i.B { background: #00a; z-index: 10; box-shadow: 0 0 8px rgba(0,0,70,0.8); }
+	i.sep { width: 1px; margin: 0 2px; background: #eee; }
+</style>

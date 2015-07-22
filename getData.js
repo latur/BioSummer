@@ -120,7 +120,8 @@ for (var uid in users) {
 	var Point = function(color, geneID) {
 		if (!info[geneID]) return '';
 		if (info[geneID][9] == 'SNP') return ' class="S" style="background: rgb(255,'+color+','+color+')"';
-		if (info[geneID][9] == 'DEL') return ' class="N" ';
+		if (info[geneID][9] == 'DEL') return ' class="D" ';
+		if (info[geneID][9] == 'INS') return ' class="I" ';
 		return ' class="B" ';
 	};
 	

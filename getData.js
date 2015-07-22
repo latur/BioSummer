@@ -22,8 +22,12 @@ var prad = [
 	'../somatic/PRAD/Somatic_Mutations/BI__IlluminaGA_DNASeq_curated/Level_2/broad.mit.edu__IlluminaGA_curated_DNA_sequencing_level2.maf'
 ];
 
+var mlevel = 22;
+
 var genes = {};
 var users = {};
+var genesCount = 0;
+var usersCount = {};
 
 function AppendData(data, prefix) {
 	for (var i in data) {
@@ -31,6 +35,7 @@ function AppendData(data, prefix) {
 		if (!e[15]) continue;
 		var uid = (prefix || '') + e[15];
 		if (!genes[e[0]] && e[0]) {
+			genesCount++;
 			genes[e[0]] = {
 				count : 0,
 				start : e[5],
@@ -39,7 +44,13 @@ function AppendData(data, prefix) {
 			};
 		}
 		genes[e[0]].count++;
-		if (!users[uid]) users[uid] = {};
+		if (!usersCount[prefix]) {
+			usersCount[prefix] = 0;
+		}
+		if (!users[uid]) {
+			usersCount[prefix]++;
+			users[uid] = {};
+		}
 		users[uid][e[0]] = e;
 	}
 }
@@ -50,16 +61,22 @@ AppendData(fs.readFileSync(ov[2], 'utf8').split("\n"), "OV2_");
 //AppendData(fs.readFileSync(brca[0], 'utf8').split("\n"), "BRCA0_");
 //AppendData(fs.readFileSync(brca[1], 'utf8').split("\n"), "BRCA1_");
 AppendData(fs.readFileSync(brca[2], 'utf8').split("\n"), "BRCA2_");
-//AppendData(fs.readFileSync(brca[3], 'utf8').split("\n"), "BRCA3_");
-//AppendData(fs.readFileSync(prad[0], 'utf8').split("\n"), "PRAD0_");
-AppendData(fs.readFileSync(prad[1], 'utf8').split("\n"), "PRAD1_");
-//AppendData(fs.readFileSync(prad[2], 'utf8').split("\n"), "PRAD2_");
+AppendData(fs.readFileSync(brca[3], 'utf8').split("\n"), "BRCA3_");
+AppendData(fs.readFileSync(prad[0], 'utf8').split("\n"), "PRAD0_");
+//AppendData(fs.readFileSync(prad[1], 'utf8').split("\n"), "PRAD1_");
+AppendData(fs.readFileSync(prad[2], 'utf8').split("\n"), "PRAD2_");
 
-// Преобразование в HTML
+// Распределение количества мутаций на ген:
+var hist = {};
+for (var geneID in genes) {
+	if (!hist[genes[geneID].count]) hist[genes[geneID].count] = 0;
+	hist[genes[geneID].count] ++;
+}
+
 // Сортировка генов:
 var sgenes = [];
 for (var geneID in genes) {
-	if (genes[geneID].count > 17) sgenes.push(geneID);
+	if (genes[geneID].count > mlevel) sgenes.push(geneID);
 }
 
 sgenes.sort(function(a, b){
@@ -71,6 +88,23 @@ sgenes.sort(function(a, b){
 	if(genes[a].chrom >  genes[b].chrom) return 1;
 	return -1;
 });
+
+// Преобразование в HTML
+console.log('<pre>');
+console.log('Users: ' + JSON.stringify(usersCount));
+console.log('Genes: ' + sgenes.length + '/' + genesCount);
+console.log('Mutations level: ' + mlevel);
+console.log('</pre>');
+
+// Отрисовка распределения:
+var histHtml = '';
+var maxH = 200;
+for (var cnt in hist) {
+	var style = 'margin-top:' + (maxH - hist[cnt] * maxH/hist['1'] - 7)+'px;';
+	if (cnt == mlevel) style += 'background-color: #F00';
+	histHtml += '<div title="'+hist[cnt]+'" style="'+style+'">'+cnt+'</div>';
+}
+console.log('<div class="hist" style="height:'+maxH+'px">' + histHtml + '</div>');
 
 var W = (sgenes.length) * 4 + 23 * 5;
 
@@ -104,5 +138,4 @@ for (var uid in users) {
 	console.log('<div style="width:' + W + 'px">' + line + '</div>');
 }
 
-// (cat visual.css && node getData.js) > visual.3.html
-
+// (cat visual.css && node getData.js) > visual.4.html

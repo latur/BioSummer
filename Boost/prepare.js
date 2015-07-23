@@ -43,18 +43,20 @@ for (var k in v) {
 }
 
 dists.sort(function(a, b){
-	if (a.val == b.val) return 0;
-	if (a.val <  b.val) return 1;
+	if (a.gene.count == b.gene.count) return 0;
+	if (a.gene.count <  b.gene.count) return 1;
 	return -1;
 });
 
 var main = [];
 for (var i in dists) {
-	console.log(JSON.stringify(dists[i].gene));
-	main.push(dists[i].gene.id);
+	if (dists[i].gene.count > 3) {
+		console.log(JSON.stringify(dists[i].gene));
+		main.push(dists[i].gene.id);
+	}
 }
 
-fn.Save('set/main.json', main);
+// fn.Save('set/main.json', main);
 
 // Поиск среднего взвешанного среди ОВ
 function Dist(H0, W0, H1, W1){
@@ -82,5 +84,5 @@ for (var uid in users) {
     file.push(line.join(','));
 }
 
-fn.Save('svm/full.csv', file.join('\n'));
+fn.Save('svm/full._.csv', file.join('\n'));
 

@@ -73,11 +73,10 @@ var ov0 = fn.Load(prad[1]);
 var ov1 = fn.Load(brca[1]);
 var file = ['user,' + main.join(',') + ',type'];
 
-var k = 0;
 for (var uid in users) {
     if(uid.indexOf("Sample_Barcode") != -1) continue ;
-    var line = [++k, uid];
-    var type = ov0.indexOf(users[uid]) == -1 ? "prad" : "brca";
+    var line = [uid];
+    var type = (ov0.indexOf(uid) == -1 ? "prad" : "brca");
     for(var i in main) line.push(users[uid][main[i]] || '0');
     line.push(type);
     file.push(line.join(','));

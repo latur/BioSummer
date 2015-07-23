@@ -5,8 +5,8 @@ console.log('> Разделение на тестовую и обучающую 
 // -------------------------------------------------------------------------- //
 // Разделение на тестовую и обучающую выборки
 // Этот шаг можно пропустить
-fn.Separate(prad[1], 'set/ov0', 1/4);
-fn.Separate(brca[1], 'set/ov1', 1/4)
+fn.Separate(prad[1], 'set/ov0', 0/4);
+fn.Separate(brca[1], 'set/ov1', 0/4);
 
 
 // -------------------------------------------------------------------------- //
@@ -49,7 +49,7 @@ dists.sort(function(a, b){
 });
 
 var main = [];
-for (var i = 0; i < 100; i++) {
+for (var i in dists) {
 	console.log(JSON.stringify(dists[i].gene));
 	main.push(dists[i].gene.id);
 }
@@ -82,5 +82,5 @@ for (var uid in users) {
     file.push(line.join(','));
 }
 
-fn.Save('svm/trainset.csv', file.join('\n'));
+fn.Save('svm/full.csv', file.join('\n'));
 

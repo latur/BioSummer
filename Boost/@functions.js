@@ -11,7 +11,7 @@ exports.Save = function(filename, data) {
 
 // Разделение на обучающую и тестовую выборку
 exports.Separate = function(source, name, part) {
-	var part = part || 1/5;
+	//var part = part || 1/5;
 	var data = fs.readFileSync(source, 'utf8').split("\n");
 	exports.Shuffle(data);
 

@@ -1,0 +1,38 @@
+ID	Disease	Item Type	Item Barcode	Item UUID	Classification	Category	Annotator	Date Created	Annotation
+12061	PRAD	Patient	TCGA-CH-5753	928c48a0-68ee-4e28-ae83-9832e52850ca	Notification	Synchronous malignancy	snyderee	11/10/2012	Pt with synchronous Non-Hodgkins lymphoma of a lymph node.  No systemic chemo or radiation.	
+17245	PRAD	Sample	TCGA-G9-6351-11A	c3834f6c-79ec-4a6d-afa0-bd5d93b7a8f0	Notification	Pathology outside specification	bowenj	09/03/2013	Normal tissue contains tumor	
+11827	PRAD	Patient	TCGA-CH-5790	2b5ef82d-e137-43f6-bfef-b202f20ee187	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy kidney cancer. No systemic treatment or radiation.	
+11828	PRAD	Patient	TCGA-CH-5791	829bed0c-c40d-44fd-aee8-6c7589db60f9	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy skin cancer. No systemic chemotherapy or radiation.	
+11825	PRAD	Patient	TCGA-CH-5764	ed73f136-42e8-4100-b432-d10370d07e8b	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy esophageal cancer. No systemic chemotherapy or radiation.	
+11824	PRAD	Patient	TCGA-CH-5763	18e79a01-07a2-4cd5-b700-71d41724e041	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy lung cancer. No systemic chemotherapy or radiation.	
+11826	PRAD	Patient	TCGA-CH-5772	ecf9f8be-7830-4626-8617-694c68ef4074	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy colon cancer.  No systemic chemotherapy or radiation.	
+28379	PRAD	Patient	TCGA-XQ-A8TA	b47791ba-85fd-41d0-ac1f-b6fa06f18e96	Notification	Neoadjuvant therapy	LeraasK	05/27/2015	During Enrollment, TSS confirmed patient received pharmaceutical treatment prior to TCGA tumor procurement. No other information given. 	
+20850	PRAD	Patient	TCGA-HC-8259	07ccb4e9-a2a9-4bfd-97bd-13873b01977a	Notification	Item does not meet study protocol	LeraasK	06/19/2014	Upon second review, the frozen top slide used to qualify the case had no tumor. 	
+17243	PRAD	Sample	TCGA-G9-6362-11A	6a5e7727-4af9-461c-8144-f93e49fb5279	Notification	Pathology outside specification	bowenj	09/03/2013	Normal tissue contains tumor	
+6139	PRAD	Aliquot	TCGA-HC-7740-01B-04D-2298-08	1237363b-46ba-4359-9af8-bd84098f47c1	Notification	Item is noncanonical	snyderee	06/26/2012	FFPE PRAD Pilot 1	
+23879	PRAD	Patient	TCGA-J4-A6G3	9b015929-99eb-4e74-8fbf-6b2e6d7f08e4	Notification	Neoadjuvant therapy	LeraasK	12/30/2014	Case had prior neoadjuvant hormone therapy (leuprolide) prior to TCGA cancer procurement. 	
+20917	PRAD	Analyte	TCGA-KC-A7F6-10A-01D	f4d29bf4-45fe-4e6a-a438-56a5a74a7650	Observation	General	LeraasK	07/08/2014	WGA amplification resulted in a reproducibly abnormal genotype.  There is no genotype issue with the stock.  The WGA product from this analyte will not be distributed to the GSC.
+	
+6160	PRAD	Aliquot	TCGA-HC-8265-01B-04D-2298-08	5ee5825f-1688-49df-a83b-26ca8288c2a4	Notification	Item is noncanonical	snyderee	06/26/2012	FFPE PRAD Pilot 1	
+6155	PRAD	Aliquot	TCGA-HC-8261-01B-05D-2298-08	52d06f71-3337-45f9-9f4b-ffc975c73870	Notification	Item is noncanonical	snyderee	06/26/2012	FFPE PRAD Pilot 1	
+19890	PRAD	Sample	TCGA-EJ-7115-11A	2b6046f1-b8ff-4151-acd1-b380334210d7	Notification	Pathology outside specification	bowenj	03/10/2014	Normal tissue contains tumor	
+12119	PRAD	Patient	TCGA-G9-6364	f8d8b417-5945-42a5-850a-fbc04b4f0e61	Notification	Synchronous malignancy	snyderee	11/10/2012	Pt with synchronous bladder cancer	
+17246	PRAD	Sample	TCGA-G9-6499-11A	8c0d4ed2-f07e-4249-9294-85222d5f0936	Notification	Pathology outside specification	bowenj	09/03/2013	Normal tissue contains tumor	
+28419	PRAD	Patient	TCGA-KC-A4BL	5089a8d2-a353-4150-8a6b-6478c5bb29bb	Notification	Neoadjuvant therapy	LeraasK	06/22/2015	TSS confirm this patient had chemotherapy prior to cancer procurement. 	
+17249	PRAD	Patient	TCGA-EJ-A46H	cec1d2ff-36e6-497e-892c-b329724b4722	Notification	Qualified in error	bowenj	09/03/2013	Subject qualified in error due to absence of malignancy in the tumor	
+17242	PRAD	Patient	TCGA-EJ-A46H	cec1d2ff-36e6-497e-892c-b329724b4722	Notification	Pathology outside specification	bowenj	09/03/2013	Upon re-review, no tumor was found in the tumor sample.	
+17247	PRAD	Patient	TCGA-EJ-A46B	1170f449-dfb5-417a-a89b-b2229a2785db	Notification	Qualified in error	bowenj	09/03/2013	Subject qualified in error due to absence of malignancy in the tumor	
+17240	PRAD	Patient	TCGA-EJ-A46B	1170f449-dfb5-417a-a89b-b2229a2785db	Notification	Pathology outside specification	bowenj	09/03/2013	Upon re-review, no tumor was found in the tumor sample.	
+17248	PRAD	Patient	TCGA-EJ-A46E	a608bf0e-a932-4541-8439-2ffb9f6294b0	Notification	Qualified in error	bowenj	09/03/2013	Subject qualified in error due to absence of malignancy in the tumor	
+17241	PRAD	Patient	TCGA-EJ-A46E	a608bf0e-a932-4541-8439-2ffb9f6294b0	Notification	Pathology outside specification	bowenj	09/03/2013	Upon re-review, no tumor was found in the tumor sample.	
+11861	PRAD	Patient	TCGA-EJ-7791	4fe004e5-49f9-4336-a690-6ebad512c813	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy basal cell carcinoma L arm.  Unknown treatment history.	
+17244	PRAD	Sample	TCGA-G9-6363-11A	c0dabc00-b14e-456b-8eea-39ba512dea8a	Notification	Pathology outside specification	bowenj	09/03/2013	Normal tissue contains tumor	
+11859	PRAD	Patient	TCGA-EJ-5542	5a92ec4c-36ee-4588-aca2-e3303f29c7ad	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy melanoma. No systemic chemotherapy or radiation.	
+17888	PRAD	Analyte	TCGA-EJ-7218-10A-01D	172586e8-4b25-4f92-87e0-64cc84380b15	Observation	General	jensenma	10/08/2013	DNA analyte UUID: 172586E8-4B25-4F92-87E0-64CC84380B15 was involved in an extraction protocol deviation wherein isopropanol precipitation was used as a means of buffer exchange on the column-eluted analyte.	
+11860	PRAD	Patient	TCGA-EJ-7123	9519be01-d78d-462c-8a95-34149538afeb	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy basal cell carcinoma of the nose. No systemic chemotherapy or radiation.	
+11875	PRAD	Patient	TCGA-HC-7748	f6040682-4999-4d71-abc2-354b473c6980	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy R kidney cancer.  No systemic chemotherapy or radiation.	
+21477	PRAD	Patient	TCGA-EJ-7312	00dda860-53c3-4ab2-8294-73e291adf9d2	Notification	History of unacceptable prior treatment related to a prior/other malignancy	LeraasK	07/31/2014	Patient had previous cancer in thyroid gland and unknown radiation and chemotherapy. 	
+6150	PRAD	Aliquot	TCGA-HC-8258-01B-05D-2298-08	e1eef67e-8d86-427e-bf5b-6cf34a01b998	Notification	Item is noncanonical	snyderee	06/26/2012	FFPE PRAD Pilot 1	
+11704	PRAD	Patient	TCGA-HC-7821	929837f9-297a-47c0-ac9a-a142eef620d3	Notification	Prior malignancy	snyderee	10/31/2012	Prior malignancy SCC of the neck.  No systemic chemotherapy or radiation.	
+19910	PRAD	Sample	TCGA-CH-5769-11A	b41d906b-2fef-45c9-8b3a-c52b5856950e	Notification	Pathology outside specification	bowenj	03/12/2014	Normal tissue contains tumor	
+18704	PRAD	Analyte	TCGA-EJ-A6RA-10A-01D	ca97831a-a906-4b0e-921d-c6b00aaa3c8b	Observation	General	pihltd	11/19/2013	DNA analyte UUID: CA97831A-A906-4B0E-921D-C6B00AAA3C8B was involved in an extraction protocol deviation wherein isopropanol precipitation was used as a means of buffer exchange on the column-eluted analyte.	

@@ -69,18 +69,18 @@ function Dist(H0, W0, H1, W1){
 
 genes = {};
 users = {};
-var ov0 = fn.Load('set/ov0.ov.maf');
-var ov1 = fn.Load('set/ov1.ov.maf');
+var ov0 = fn.Load(prad[1]);
+var ov1 = fn.Load(brca[1]);
 var file = ['user,' + main.join(',') + ',type'];
 
 for (var uid in users) {
     if(uid.indexOf("Sample_Barcode") != -1) continue ;
     var line = [uid];
-    var type = ov0.indexOf(users[uid]) == -1 ? "OV1" : "OV0";
+    var type = ov0.indexOf(users[uid]) == -1 ? "prad" : "brca";
     for(var i in main) line.push(users[uid][main[i]] || '0');
     line.push(type);
     file.push(line.join(','));
 }
 
-fn.Save('svm/OVset.csv', file.join('\n'));
+fn.Save('svm/trainset.csv', file.join('\n'));
 

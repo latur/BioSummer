@@ -6,4 +6,4 @@
 .idea
 *.iml
 data
-
+.DS_Store

@@ -78,7 +78,7 @@ for (var uid in users) {
     var line = [uid];
     for(var i in main) line.push(users[uid][main[i]] || 0);
     line.push(ov0.indexOf(users[uid]) == -1 ? "OV1" : "OV0");
-    file.push(line.join('\n'));
+    file.push(line.join('\n')+'\n');
 }
 
 fn.Save('svm/OVset.csv', main);

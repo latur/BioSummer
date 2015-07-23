@@ -76,10 +76,11 @@ var file = ['user,' + main.join(',') + ',type'];
 for (var uid in users) {
     if(uid.indexOf("Sample_Barcode") != -1) continue ;
     var line = [uid];
-    for(var i in main) line.push(users[uid][main[i]] || 0);
-    line.push(ov0.indexOf(users[uid]) == -1 ? "OV1" : "OV0");
-    file.push(line.join('\n')+'\n');
+    var type = ov0.indexOf(users[uid]) == -1 ? "OV1" : "OV0";
+    for(var i in main) line.push(users[uid][main[i]] || '0');
+    line.push(type);
+    file.push(line.join(','));
 }
 
-fn.Save('svm/OVset.csv', main);
+fn.Save('svm/OVset.csv', file.join('\n'));
 

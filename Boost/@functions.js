@@ -36,7 +36,7 @@ exports.Value = function(e) {
 };
 
 // Загрузка генов,пациентов,преобразование метрикой
-exports.Load = function(file) {
+exports.Load = function(file, level) {
 	console.log('> Загрузка обучающей выборки: ' + file);
 	var userslist = [];
 	var data = fs.readFileSync(file, 'utf8').split("\n");
@@ -56,7 +56,7 @@ exports.Load = function(file) {
 		genes[e[0]].count++;
 		if (!users[uid]) users[uid] = {};
 		if (!users[uid][e[0]]) users[uid][e[0]] = 0;
-		users[uid][e[0]] += exports.Value(e);
+		users[uid][e[0]] += exports.Value(e)/(level || 1);
 		if (userslist.indexOf(uid) == -1) userslist.push(uid);
 	}
 	return userslist;

@@ -19,7 +19,8 @@ for (var i in data2k) {
 		var score = line[5]/10;
 		var connected = line[4].split(' ');
 		for (var cc in connected) {
-			if (connected[cc] != '' && !genesline[connected[cc]]) {
+			//if (connected[cc] != '' && !genesline[connected[cc]]) {
+			if (connected[cc] != '') {
 				var ccid = connected[cc];
 				if (!genesline[gid][ccid]) genesline[gid][ccid] = score;
 			}
@@ -34,7 +35,8 @@ for (var i in data4k) {
 		var score = line[5]/10;
 		var connected = line[4].split(' ');
 		for (var cc in connected) {
-			if (connected[cc] != '' && !genesline[connected[cc]]) {
+			//if (connected[cc] != '' && !genesline[connected[cc]]) {
+			if (connected[cc] != '') {
 				var ccid = connected[cc];
 				if (!genesline[gid][ccid]) genesline[gid][ccid] = score;
 			}
@@ -56,16 +58,19 @@ users = {};
 var ov0 = fn.Load('set/ov0.ov.maf');
 var ov1 = fn.Load('set/ov1.ov.maf');
 
+var glist_ = {};
+
 for (var k in ov0) {
-	var glist = [];
 	var line = [];
 	for (var gid in genesline) {
-		glist.push(gid);
+		if (!glist_[gid]) glist_[gid] = 0;
+		if (users[ov0[k]][gid]) glist_[gid]++;
 		line.push(users[ov0[k]][gid] || 0);
 		for (var sub in genesline[gid]) {
 			var good = (users[ov0[k]][gid] || 0) * genesline[gid][sub];
 			line.push(good);
-			glist.push(sub);
+			if (!glist_[sub]) glist_[sub] = 0;
+			if (users[ov0[k]][gid]) glist_[gid]++;
 		}
 	}
 }
@@ -73,13 +78,25 @@ for (var k in ov0) {
 for (var k in ov1) {
 	var line = [];
 	for (var gid in genesline) {
+		if (!glist_[gid]) glist_[gid] = 0;
+		if (users[ov1[k]][gid]) glist_[gid]++;
 		line.push(users[ov1[k]][gid] || 0);
 		for (var sub in genesline[gid]) {
 			var good = (users[ov1[k]][gid] || 0) * genesline[gid][sub];
 			line.push(good);
+			if (!glist_[sub]) glist_[sub] = 0;
+			if (users[ov1[k]][gid]) glist_[gid]++;
 		}
 	}
 }
+
+var glist = [];
+for (var gid in glist_) glist.push(gid);
+glist.sort(function(a,b){
+	if (glist_[a] == glist_[b]) return 0;
+	if (glist_[a] >  glist_[b]) return -1;
+	return 1;
+});
 
 
 var file = ['user,' + glist.join(',') + ',type'];
@@ -101,6 +118,4 @@ for (var i in ov1) {
 }
 
 console.log(line.length);
-fn.Save('net/_net4k.ON.csv', file.join('\n'));
-
-
+fn.Save('net/_net4k.ON.sorted.csv', file.join('\n'));

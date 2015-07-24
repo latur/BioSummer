@@ -5,8 +5,8 @@ console.log('> Разделение на тестовую и обучающую 
 // -------------------------------------------------------------------------- //
 // Разделение на тестовую и обучающую выборки
 // Этот шаг можно пропустить
-fn.Separate(prad[1], 'set/ov0', 0/4);
-fn.Separate(brca[1], 'set/ov1', 0/4);
+fn.Separate(prad[1], 'set/ov0', 0/4.5);
+fn.Separate(brca[1], 'set/ov1', 0/4.5);
 
 
 // -------------------------------------------------------------------------- //
@@ -41,22 +41,22 @@ for (var k in v) {
 	dists.push({val : dist, gene : genes[v[k]]});
 	process.stdout.write('\033[100D> ' + k + '/' + v.length);
 }
-
 dists.sort(function(a, b){
-	if (a.gene.count == b.gene.count) return 0;
-	if (a.gene.count <  b.gene.count) return 1;
+	// if (a.gene.count == b.gene.count) return 0;
+	// if (a.gene.count <  b.gene.count) return 1;
+	if (a.val == b.val) return 0;
+	if (a.val <  b.val) return 1;
 	return -1;
 });
 
 var main = [];
-for (var i in dists) {
-	if (dists[i].gene.count > 3) {
-		console.log(JSON.stringify(dists[i].gene));
-		main.push(dists[i].gene.id);
-	}
-}
+for (var i = 0; i < 2000; i++) main.push(dists[i].gene.id);
+fn.Save('net/@roots2k.txt', main.join('\n'));
+var main = [];
+for (var i = 2000; i < 4000; i++) main.push(dists[i].gene.id);
+fn.Save('net/@roots4k.txt', main.join('\n'));
 
-// fn.Save('set/main.json', main);
+process.exit();
 
 // Поиск среднего взвешанного среди ОВ
 function Dist(H0, W0, H1, W1){
@@ -84,5 +84,5 @@ for (var uid in users) {
     file.push(line.join(','));
 }
 
-fn.Save('svm/full._.csv', file.join('\n'));
+fn.Save('net/_net.OFS.csv', file.join('\n'));
 

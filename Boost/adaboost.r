@@ -1,6 +1,6 @@
 library("adabag")
 
-filename <- "/Users/latur/Documents/Bio/BioSummer/Boost/net/_net4k.ON.csv"
+filename <- "/Users/latur/Documents/Bio/BioSummer/Boost/svm/full.csv"
 data <- read.csv(filename)
 size <- length(data[[1]])
 data <- data[,2:ncol(data)]

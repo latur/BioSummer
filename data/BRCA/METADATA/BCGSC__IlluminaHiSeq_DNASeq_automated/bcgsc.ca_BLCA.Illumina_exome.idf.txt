@@ -1,0 +1,22 @@
+Investigation Title	Analysis of TCGA BLCA Exome Sequence Data
+Experimental Design	disease_state_design
+Experimental Design Term Source REF	MGED Ontology
+Experimental Factor Name	somatic_variant
+Experimental Factor Type	disease_state
+Person Last Name	Kasaian	He
+Person First Name	Katayoon	An
+Person Mid Initials
+Person Email	kkasaian@bcgsc.ca	ahe@bcgsc.ca
+Person Address	"100-570 W 7th Ave, Vancouver, BC, V5Z 4S6, Canada"	"100-570 W 7th Ave, Vancouver, BC, V5Z 4S6, Canada"
+Person Affiliation	"Genome Sciences Centre, BCCA"	"Genome Sciences Centre, BCCA"
+Person Roles	data_analyst	submitter
+Experiment Description	"Detection of somatic variants from the TCGA BLCA exome sequence data using Strelka"
+Protocol Name	bcgsc.ca:somatic_variant_detection:Illumina_DNASeq:01
+Protocol Type	genotyping_design
+Protocol Description	"somatic variant detection from exome sequence data"
+Protocol Parameters	
+Protocol Term Source REF	MGED Ontology
+SDRF Files	bcgsc.ca_BLCA.Illumina_exome.sdrf.txt
+Term Source Name	MGED Ontology
+Term Source File	http://mged.sourceforge.net/ontologies/MGEDontology.php
+Term Source Version	1.3.1.1

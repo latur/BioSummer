@@ -1,0 +1,33 @@
+Investigation Title	Comprehensive molecular characterization of papillary renal cell carcinoma
+Experimental Design	individual_genetic_characteristics_design
+Experimental Design Term Source REF	MGED Ontology
+
+Experimental Factor Name	Tumor versus normal	Call variants by individual
+Experimental Factor Type	disease_state	individual
+
+Person Last Name	Wheeler	Drummond	Davis	Li	Al Mamun	Shinbrot	Xi	Hale	Kalra
+Person First Name	David	Jennifer	Caleb	Jie	Abu Amar	Eve	Liu	Walker	Divya
+Person Mid Initials	A	A							
+Person Email	david.wheeler@bcm.edu	jenn@bcm.edu	cdavis@BCM.EDU	jie.li2@bcm.edu	mamun@bcm.edu	shinbrot@bcm.edu	lxi@bcm.edu	hale@bcm.edu	divyak@bcm.edu
+Person Address	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030	1 Baylor Plaza Houston TX 77030
+Person Affiliation	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine	Baylor College of Medicine
+Person Roles	investigator	data_analyst	data_analyst	data_analyst	data_analyst	data_analyst	data_analyst;submitter	submitter	submitter
+
+PubMed ID	
+Publication Author List	
+Publication Title	
+Publication Status	
+
+Experiment Description	Whole exome sequencing data was produced and analyzed by Baylor Human Genome Sequencing Center as part of the TCGA effort towards comprehensive genomic characterization of multiple tumor types.  Massively parallel sequencing exome capture was performed on untreated papillary renal cell carcinoma samples using NimbleGen (custom designed) arrays according the manufacturer’s instructions. All exome sequencing was performed on the Illumina HiSeq platforms. Basic alignment and initial sequence analysis were carried out using the Mercury analysis pipeline.
+
+Protocol Name	hgsc.bcm.edu:library_preparation:illumina:02	hgsc.bcm.edu:library_preparation:illumina:03	broad.mit.edu:library_preparation:imported:01	hgsc.bcm.edu:dna_sequencing:illumina:32	hgsc.bcm.edu:dna_sequencing:illumina:34	broad.mit.edu:dna_sequencing:imported:01	hgsc.bcm.edu:mapping_wxs:illumina:14	hgsc.bcm.edu:mapping_wxs:illumina:16	broad.mit.edu:mapping_wxs:imported:01	hgsc.bcm.edu:variant_calling:illumina:01	bcgsc.ca:variant_calling:imported:01	broad.mit.edu:variant_calling:imported:01	ucsc.edu:variant_calling:imported:01	hgsc.bcm.edu:maf_generation:illumina:20
+Protocol Type														
+Protocol Description	Libraries were constructed into Illumina paired end pre capture libraries according to the manufacturer’s protocol (Illumina Multiplexing_SamplePrep_Guide_1005361_D) using Phusion DNA polymerase with modifications. Libraries were prepared using Beckman robotic workstations (Biomek FX and FXp models).  The complete protocol and oligonucleotide sequences are accessible from the HGSC website https://www.hgsc.bcm.edu/sites/default/files/documents/Illumina_Barcoded_Paired-End_Capture_Library_Preparation_Using_Non-index_Adaptors_and_Phusion_DNA_Polymerase.pdf	Libraries were constructed into Illumina paired-end pre-capture libraries according to the manufacturer’s protocol (Illumina Multiplexing_SamplePrep_Guide_1005361_D) using KAPA DNA polymerase with modifications. Libraries were prepared using Beckman robotic workstations (Biomek FX and FXp models).  The complete protocol and oligonucleotide sequences are accessible from the HGSC website https://www.hgsc.bcm.edu/sites/default/files/documents/Protocol-Illumina_Whole_Exome_Sequencing_Library_Preparation-KAPA_Version_BCM-HGSC_RD_03-20-2014.pdf		instrument=Illumina HiSeq 2000; lane design=multiplexed; read length 200; alignment program=Casava V1.8.3	instrument=Illumina HiSeq 2500, lane design=multiplexed, read length 200, alignment program=Casava V1.8.3	instrument=Illumina HiSeq 2000, lane design=multiplexed, read length 85, alignment program=Casava V1.7	bwa v0.5.9 -> MateInfoFixer v1.0 -> picard v1.51 -> samtools v0.1.7(r510) -> GATk v1.6.2 -> samtools v0.1.7(r510) -> picard v1.51	bwa v0.5.9 -> MateInfoFixer v1.0 -> picard v1.51 -> samtools v0.1.7(r510) -> GATk v2.5-2-gf57256b -> picard v1.84		Atlas-SNP2 v1.3 with -f10000;Atlas-Indel2 v1.3 dev branch	Variant calls produced by British Columbia Genome Sciences Centre (bcgsc.ca) and delivered directly to Baylor (hgsc.bcm.edu)	variant calling performed by Broad Institute of MIT and Harvard (broadinstitute.org) and submitted to "broad.mit.edu_KIRP.IlluminaGA_DNASeq_curated.Level_2.1.1.0"	variant calling performed by University of California Santa Cruz (ucsc.edu) and submitted to "ucsc.edu_KIRP.IlluminaGA_DNASeq_automated.Level_2.1.2.0"	maf version 2.3;min base quality 20;min map quality;min tumor coverage;min normal coverage
+Protocol Parameters	Vendor;Catalog Name;Catalog Number;Annotation URL;Product URL;Target File URL;Target File Format;Target File Format Version;Probe File URL;Probe File Format;Probe File Format Version;Target Reference Accession	Vendor;Catalog Name;Catalog Number;Annotation URL;Product URL;Target File URL;Target File Format;Target File Format Version;Probe File URL;Probe File Format;Probe File Format Version;Target Reference Accession	Vendor;Catalog Name;Catalog Number;Annotation URL;Product URL;Target File URL;Target File Format;Target File Format Version;Probe File URL;Probe File Format;Probe File Format Version;Target Reference Accession				Protocol Min Base Quality;Protocol Min Map Quality;Protocol Min Tumor Coverage;Protocol Min Normal Coverage	Protocol Min Base Quality;Protocol Min Map Quality;Protocol Min Tumor Coverage;Protocol Min Normal Coverage	Protocol Min Base Quality;Protocol Min Map Quality;Protocol Min Tumor Coverage;Protocol Min Normal Coverage					
+Protocol Term Source REF														
+
+SDRF Files	hgsc.bcm.edu_KIRP.Mixed_DNASeq_curated.Level_2.1.3.0.sdrf.txt
+
+Term Source Name	MGED Ontology
+Term Source File	http://mged.sourceforge.net/ontologies/MGEDontology.php
+Term Source Version	1.3.1.1

@@ -1,9 +1,0 @@
-LRP1B - belongs to the low density lipoprotein (LDL) receptor gene family. These receptors play a wide variety of roles in normal cell function and development due to their interactions with multiple ligands (Liu et al., 2001 [PubMed 11384978]).[
-
-ZFHX4 - May play a role in neural and muscle differentiation (By similarity). May be involved in transcriptional regulation
-
-CSMD3 - We identified a novel giant gene encoding a transmembrane protein with CUB and sushi multiple domains on the human
-
-TTN - The TTN gene provides instructions for making a very large protein called titin. This protein plays an important role in muscles the body uses for movement (skeletal muscles) and in heart (cardiac) muscle. Slightly different versions, or isoforms, of titin are made in different muscles
-
-TP53 - The TP53 gene provides instructions for making a protein called tumor protein p53 (or p53). This protein acts as a tumor suppressor, which means that it regulates cell division by keeping cells from growing and dividing too fast or in an uncontrolled way.

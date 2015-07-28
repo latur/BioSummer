@@ -1,0 +1,24 @@
+File format: [gene1] [gene2] [CE-CC] [CE-CX] [CE-GT] [CE-LC] [CE-YH] [DM-PI] [HS-CC] [HS-CX] [HS-DC] [HS-GN] [HS-LC] [HS-MS] [HS-PG] [HS-YH] [SC-CC] [SC-CX] [SC-GT] [SC-LC] [SC-MS] [SC-TS] [SC-YH] [IntNet]
+CE-CC = Co-citation of worm gene
+CE-CX = Co-expression among worm genes
+CE-GT = Worm genetic interactions
+CE-LC = Literature curated worm protein physical interactions
+CE-YH = High-throughput yeast 2-hybrid assays among worm genes
+DM-PI = Fly protein physical interactions
+HS-CC = Co-citation of human genes
+HS-CX = Co-expression among human genes
+HS-DC = Co-occurrence of domains among human proteins
+HS-GN = Gene neighbourhoods of bacterial and archaeal orthologs of human genes
+HS-LC = Literature curated human protein physical interactions
+HS-MS = human protein complexes from affinity purification/mass spectrometry
+HS-PG = Co-inheritance of bacterial and archaeal orthologs of human genes
+HS-YH = High-throughput yeast 2-hybrid assays among human genes
+SC-CC = Co-citation of yeast genes
+SC-CX = Co-expression among yeast genes
+SC-GT = Yeast genetic interactions
+SC-LC = Literature curated yeast protein physical interactions
+SC-MS = Yeast protein complexes from affinity purification/mass spectrometry
+SC-TS = Yeast protein interactions inferred from tertiary structures of complexes
+SC-YH = High-throughput yeast 2-hybrid assays among yeast genes
+IntNet = Integrated network (HumanNet)
+

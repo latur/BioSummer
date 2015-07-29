@@ -73,32 +73,3 @@ Test <- function(name){
 
 for (file in dataset) Test(file)
 
-
-
-
-Test("COAD.HNSC.G1.csv")
-
-
-
-
-t1 <- Test("COAD.HNSC.G0.csv")
-t2 <- Test("KICH.HNSC.f2.csv")
-
-
-
-  path <- "/Volumes/Mac/Users/latur/Public/BioSummer/CSV/"
-  name <- "COAD.HNSC.G0.csv";
-  file <- paste(path, name, sep = "")
-  data <- read.csv(file)
-  e1   <- data[,c(2:2000, ncol(data))]
-  name <- "COAD.HNSC.G1.csv";
-  file <- paste(path, name, sep = "")
-  data <- read.csv(file)
-  e2   <- data[,c(2:2000, ncol(data))]
-
-gnew <- c()
-for (i in names(e2)) {
-  if (sum(names(e1) == i) == 0) gnew <- c(gnew, i)
-}
-
-

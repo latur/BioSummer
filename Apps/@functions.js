@@ -48,7 +48,7 @@ exports.Poorly = function(G, user) {
 	var Sum = function(list) {
 		var s = 0;
 		for (var i in list) s += Number(list[i]);
-		return s;
+		return s/10;
 	};
 
 	var add = {};
@@ -58,7 +58,7 @@ exports.Poorly = function(G, user) {
 			var connected = G[gid];
 			for (var to in connected) {
 				if (!add[to]) add[to] = 0;
-				add[to] += user[gid] * Sum(connected[to])/10;
+				add[to] += user[gid] * Sum(connected[to]);
 				geneslist[to] = true;
 			}
 		}
@@ -74,8 +74,21 @@ exports.Poorly = function(G, user) {
 
 // Сохранение с csv
 exports.CSV = function(ov0, ov1, geneslist){
+	// Сортировка генов по количеству мутаций
 	var glist = [];
-	for (var i in geneslist) glist.push(i);
+	for (var i in geneslist) {
+		geneslist[i] = 0;
+		// for (var u in users) if (users[u][i]) geneslist[i] += users[u][i];
+		for (var u in users) if (users[u][i]) geneslist[i] ++;
+		glist.push(i);
+	}
+	
+	glist.sort(function(a,b){
+		if (geneslist[a] == geneslist[b]) return 0;
+		if (geneslist[a] >  geneslist[b]) return -1;
+		return 1;
+	});
+	
 	var file = ['user,' + glist.join(',') + ',type'];
 	for (var i in ov0) {
 		var uid = ov0[i];

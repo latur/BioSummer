@@ -6,10 +6,10 @@ install.packages("kernlab")
 library("kernlab")
 library("adabag")
 
-Train <- function(data, repeats){
+# SVM
+SVMTrainTest <- function(data, repeats){
   m <- dim(data)[2]
   n <- dim(data)[1]
-  # x <- data[, 2:(m-1)]
   x <- data[, 1:(m-1)]
   y <- data[, m]
   result <- c();
@@ -35,28 +35,70 @@ Train <- function(data, repeats){
   result
 }
 
-AdaBoost <- function(filename){
-  maingenes <- paste(filename, ".main", sep = "")
-  testSVM   <- paste(filename, ".svm",  sep = "")
+path <- "/Volumes/Mac/Users/latur/Public/BioSummer/CSV/"
+dataset <- c(
+  "COAD.HNSC.G0.csv",
+  "COAD.HNSC.G1.csv",
+  "COAD.HNSC.G2.csv",
+  "COAD.KICH.G0.csv",
+  "COAD.KICH.G1.csv",
+  "COAD.KICH.G2.csv",
+  "HNSC.KICH.G0.csv",
+  "HNSC.KICH.G1.csv",
+  "HNSC.KICH.G2.csv",
+  "HNSC.KIRC.G0.csv",
+  "HNSC.KIRC.G1.csv",
+  "HNSC.KIRC.G2.csv",
+  "KICH.KIRP.G0.csv",
+  "KICH.KIRP.G1.csv",
+  "KICH.KIRP.G2.csv",
+  "KIRP.COAD.G0.csv",
+  "KIRP.COAD.G1.csv",
+  "KIRP.COAD.G2.csv",
+  "KIRP.HNSC.G0.csv",
+  "KIRP.HNSC.G1.csv",
+  "KIRP.HNSC.G2.csv"
+)
 
-  data <- read.csv(filename)
-  data <- data[,2:ncol(data)]
+log  <- c()
+Test <- function(name){
+  file <- paste(path, name, sep = "")
+  data <- read.csv(file)
+  data <- data[,c(2:2000, ncol(data))]
   ada  <- boosting(type~., data=data, boos=TRUE, mfinal=10)
-
   main <- names(ada$importance[ada$importance != 0])
-  write.table(main, row.names = F, col.names = F, maingenes)
+  test <- SVMTrainTest(data[c(main, "type")], 1000)
+  log <<- c(log, c(name, length(main), mean(test)))
+}
 
-  test <- Train(data[c(main, "type")], 5000)
-  write.table(test, row.names = F, col.names = F, testSVM)
+for (file in dataset) Test(file)
+
+
+
+
+Test("COAD.HNSC.G1.csv")
+
+
+
+
+t1 <- Test("COAD.HNSC.G0.csv")
+t2 <- Test("KICH.HNSC.f2.csv")
+
+
+
+  path <- "/Volumes/Mac/Users/latur/Public/BioSummer/CSV/"
+  name <- "COAD.HNSC.G0.csv";
+  file <- paste(path, name, sep = "")
+  data <- read.csv(file)
+  e1   <- data[,c(2:2000, ncol(data))]
+  name <- "COAD.HNSC.G1.csv";
+  file <- paste(path, name, sep = "")
+  data <- read.csv(file)
+  e2   <- data[,c(2:2000, ncol(data))]
+
+gnew <- c()
+for (i in names(e2)) {
+  if (sum(names(e1) == i) == 0) gnew <- c(gnew, i)
 }
 
 
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KICH.KIRP.f1.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KICH.HNSC.f1.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KIRC.KIRP.f1.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/COAD.HNSC.f1.csv")
-
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KICH.KIRP.f2.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KICH.HNSC.f2.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/KIRC.KIRP.f2.csv")
-AdaBoost("/Volumes/Mac/Users/latur/Public/BioSummer/CSV/COAD.HNSC.f2.csv")
